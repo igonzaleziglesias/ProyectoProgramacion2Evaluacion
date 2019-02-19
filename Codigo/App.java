@@ -48,7 +48,7 @@ public class App {
                             bola = new Bola();
                             break;
                         case 2:
-                            JOptionPane.showMessageDialog(null, "Has abandonado las partida");
+                            JOptionPane.showMessageDialog(null, "Has abandonado las partida\nPuntuacion: "+ristra.getPuntuacion());
                             System.exit(FIN);
                         default:
                             break;
@@ -66,6 +66,8 @@ public class App {
 
         } while (ristra.tamaño() < FIN);
         ristra.mostrarRistra();
+        
+        JOptionPane.showMessageDialog(null, "HAS PERDIDO \nPuntuacion: "+ristra.getPuntuacion());
         System.out.println("");
 
     }

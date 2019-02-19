@@ -10,6 +10,10 @@ public class Ristra implements IRistra {
     private int puntuacion;
     private ArrayList<Bola> ristraBolas = new ArrayList<Bola>();
 
+    public int getPuntuacion() {
+        return puntuacion;
+    }
+
     public void nuevaBola(Bola bola) {
         ristraBolas.add(bola);
     }

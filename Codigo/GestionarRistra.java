@@ -30,5 +30,9 @@ public class GestionarRistra {
         ristraBolas.mostrarSegunVanSaliendo(ristraBolas.invertir());
 
     }
+    
+    public int getPuntuacion(){
+        return ristraBolas.getPuntuacion();
+    }
 
 }
