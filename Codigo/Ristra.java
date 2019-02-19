@@ -5,7 +5,7 @@ import Excepciones.FueraDeRango;
 import PedirDatos.Pedir;
 import java.util.ArrayList;
 
-public class Ristra {
+public class Ristra implements IRistra {
     private int puntuacion;
     private ArrayList<Bola> ristraBolas = new ArrayList<Bola>();
 
