@@ -6,6 +6,7 @@ import PedirDatos.Pedir;
 import java.util.ArrayList;
 
 public class Ristra implements IRistra {
+
     private int puntuacion;
     private ArrayList<Bola> ristraBolas = new ArrayList<Bola>();
 
@@ -48,18 +49,16 @@ public class Ristra implements IRistra {
             System.out.printf("%4s", "");
         }
         for (Bola ele : bola) {
-
             System.out.printf("%4s", ele.toString());
-
         }
-       
-        System.out.println("\nPuntuacion: "+puntuacion);
+
+        System.out.println("\nPuntuacion: " + puntuacion);
     }
 
     public ArrayList<Bola> disparar(Bola bola) throws FueraDeRango {
 
         System.out.println(longitud());
-
+//tratar con una excepcion que introduzca un int
         int posicion = Pedir.pedirInt("A que posicion quiere disparar?") - 1;//indicar la posicion a la que disparar
         if (posicion < 0) {
             throw new FueraDeRango("Disparo fallido");
@@ -110,7 +109,7 @@ public class Ristra implements IRistra {
                         }
                     }
                 }
-                int bolasJuntas=(acumulador + acumulador2 - 1);
+                int bolasJuntas = (acumulador + acumulador2 - 1);
                 System.out.println("acumulador " + bolasJuntas);//restamos 1 para no contar dos veces la posicion del elemento introducido
 
                 if (bolasJuntas >= 3) {//hace explotar el conjunto de bolas si al disparar hay 3 o mas bolas iguales juntas
@@ -139,15 +138,15 @@ public class Ristra implements IRistra {
         }
 
     }
-    
-    public void puntuacion(int bolasJuntas){
-        int puntos=0;
-        
-        for (int i=3;i<=bolasJuntas;i++){
+
+    public void puntuacion(int bolasJuntas) {
+        int puntos = 0;
+
+        for (int i = 3; i <= bolasJuntas; i++) {
             puntos++;
         }
-        this.puntuacion=puntuacion+puntos;
-        
+        this.puntuacion = puntuacion + puntos;
+
     }
 
 }
