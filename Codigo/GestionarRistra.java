@@ -1,27 +1,25 @@
 package Codigo;
 
 import Excepciones.FueraDeRango;
-import java.util.ArrayList;
 
 public class GestionarRistra {
 
     private Bola bola;
     private Ristra ristraBolas = new Ristra();
 
-    public void avanzarRistra() {
+    public void avanzarRistra() {//avanza una posicion la ristra de bolas añadiendo una nueva bola
         bola = new Bola();
         ristraBolas.nuevaBola(bola);
 
     }
 
-    public boolean dispararBola(Bola bola) {
-        try {
+    public void dispararBola(Bola bola) {
+        try {//intenta disparar una bola contra la ristra y lanza la excepcion si no consigue alcanzarla
             ristraBolas.disparar(bola);
             System.out.println("Disparada");
-            return true;
         } catch (FueraDeRango ex) {
             System.out.println(ex.getMessage());
-        } return false;
+        } 
     }
 
     public int tamaño() {

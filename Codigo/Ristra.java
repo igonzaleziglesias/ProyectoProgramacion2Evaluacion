@@ -1,13 +1,13 @@
 package Codigo;
 
-import static Codigo.Constantes.FIN;
+import static Utilidades.Constantes.FIN;
 import Excepciones.FueraDeRango;
 import PedirDatos.Pedir;
 import java.util.ArrayList;
 
 public class Ristra {
-
-    ArrayList<Bola> ristraBolas = new ArrayList<Bola>();
+    private int puntuacion;
+    private ArrayList<Bola> ristraBolas = new ArrayList<Bola>();
 
     public void nuevaBola(Bola bola) {
         ristraBolas.add(bola);
@@ -52,20 +52,25 @@ public class Ristra {
             System.out.printf("%4s", ele.toString());
 
         }
+       
+        System.out.println("\nPuntuacion: "+puntuacion);
     }
 
     public ArrayList<Bola> disparar(Bola bola) throws FueraDeRango {
 
         System.out.println(longitud());
 
-        int posicion = Pedir.pedirInt("A que posicion quiere disparar?") - 1;
-        if (posicion > longitud()) {
+        int posicion = Pedir.pedirInt("A que posicion quiere disparar?") - 1;//indicar la posicion a la que disparar
+        if (posicion < 0) {
+            throw new FueraDeRango("Disparo fallido");
+        }
+        if (posicion > longitud()) {//comprueba que el disparo sea a la ristra de bolas y si no lanza una excepcion fuera de rango
             throw new FueraDeRango("Disparo fallido");
         }
         int acumulador = 1;
         int acumulador2 = 1;
-        
-        if (posicion == longitud()) {
+
+        if (posicion == longitud()) {//dispara al final del array y cuenta las bolas del mismo color que hay a su lado
             ristraBolas.add(bola);
             for (int i = posicion - 1; i >= 0; i--) {
                 if (ristraBolas.get(i).getColor() != null) {
@@ -81,8 +86,8 @@ public class Ristra {
 
             ristraBolas.add(posicion, bola);
 
-            if (longitud() > 1) {
-                for (int i = posicion + 1; i <= longitud(); i++) {
+            if (longitud() > 1) {//comprueba si la ristra tiene elementos
+                for (int i = posicion + 1; i <= longitud(); i++) {//cuenta las bolas que hay a la izq del disparo iguales a la bola disparada(cuenta la bola disparada)
 //          System.out.println(ristraBolas.get(i));System.out.println(ristraBolas.get(posicion));
                     try {
                         if (ristraBolas.get(posicion).getColor().equals(ristraBolas.get(i).getColor())) {
@@ -95,7 +100,7 @@ public class Ristra {
                         System.out.println("No hay mas elementos en la lista");//quitar el mensaje solo quiero que trate la excepcion
                     }
                 }
-                for (int i = posicion - 1; i >= 0; i--) {
+                for (int i = posicion - 1; i >= 0; i--) { //cuenta las bolas que hay a la derecha del disparo iguales a la bola disparada(cuenta la bola disparada)
                     if (ristraBolas.get(i).getColor() != null) {
                         if (ristraBolas.get(posicion).getColor().equals(ristraBolas.get(i).getColor())) {
                             acumulador2++;
@@ -105,11 +110,12 @@ public class Ristra {
                         }
                     }
                 }
+                int bolasJuntas=(acumulador + acumulador2 - 1);
+                System.out.println("acumulador " + bolasJuntas);//restamos 1 para no contar dos veces la posicion del elemento introducido
 
-                System.out.println("acumulador " + (acumulador + acumulador2 - 1));//restamos 1 para no contar dos veces la posicion del elemento introducido
-
-                if ((acumulador + acumulador2 - 1) >= 3) {
+                if (bolasJuntas >= 3) {//hace explotar el conjunto de bolas si al disparar hay 3 o mas bolas iguales juntas
                     explotar(posicion, acumulador, acumulador2);
+                    puntuacion(bolasJuntas);
                 }
             }
         }
@@ -117,7 +123,7 @@ public class Ristra {
     }
 
     public void explotar(int posicion, int acumulador, int acumulador2) {
-        ristraBolas.remove(posicion);
+        ristraBolas.remove(posicion);//elimina la bola insertada
         acumulador = acumulador - 1;//quitamos la posicion en la que introducimos que ya la eliminamos
         acumulador2 = acumulador2 - 1;//quitamos la posicion en la que introducimos 
 
@@ -132,6 +138,16 @@ public class Ristra {
             acumulador2--;
         }
 
+    }
+    
+    public void puntuacion(int bolasJuntas){
+        int puntos=0;
+        
+        for (int i=3;i<=bolasJuntas;i++){
+            puntos++;
+        }
+        this.puntuacion=puntuacion+puntos;
+        
     }
 
 }
