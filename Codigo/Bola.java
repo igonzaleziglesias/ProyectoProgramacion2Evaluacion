@@ -1,11 +1,9 @@
 package Codigo;
 
-public class Bola implements Comparable {
+public class Bola{
 
     private int n;
     private String color;
-
-
 
     public Bola() {
         this.n = ((int) (Math.random() * 4) + 1);
@@ -48,15 +46,7 @@ public class Bola implements Comparable {
         return color ;
     }
 
-    @Override
-    public int compareTo(Object t) {
-              Bola a = (Bola) t;
-        if (this.color.compareToIgnoreCase(a.color)>0){
-            return 1;
-        }else if (this.color.compareToIgnoreCase(a.color)<0){
-            return -1;
-        }else return 0;
-    }
+
     
     
 
