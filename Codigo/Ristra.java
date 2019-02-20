@@ -56,9 +56,10 @@ public class Ristra implements IRistra {
 //        for (i = FIN - longitud() + 1; i > 1; i--) {
 //            System.out.printf("%4s", "");
 //        }
-        System.out.print("==");
+        System.out.print("\033[30m==");
         for (Bola ele : bola) {
-            System.out.printf("%4s", ele.toString());
+            System.out.printf("%3s","");
+            System.out.print(ele.toString());
         }
         System.out.println("");
         System.out.println("\nPuntuacion: " + puntuacion);
@@ -84,7 +85,7 @@ public class Ristra implements IRistra {
                 if (ristraBolas.get(i).getColor() != null) {
                     if (ristraBolas.get(posicion).getColor().equals(ristraBolas.get(i).getColor())) {
                         acumulador2++;
-                        System.out.println(ristraBolas.get(posicion).getColor() + " 2 " + (acumulador2-1) + " " + ristraBolas.get(i).getColor());
+                        System.out.println(ristraBolas.get(posicion).getColor() + " 2 " + (acumulador2 - 1) + " " + ristraBolas.get(i).getColor());
                     } else {
                         break;
                     }
@@ -100,7 +101,7 @@ public class Ristra implements IRistra {
                     try {
                         if (ristraBolas.get(posicion).getColor().equals(ristraBolas.get(i).getColor())) {
                             acumulador++;
-                            System.out.println(ristraBolas.get(posicion).getColor() + " 1 " + (acumulador-1) + " " + ristraBolas.get(i).getColor());
+                            System.out.println(ristraBolas.get(posicion).getColor() + " 1 " + (acumulador - 1) + " " + ristraBolas.get(i).getColor());
                         } else {
                             break;
                         }
@@ -112,7 +113,7 @@ public class Ristra implements IRistra {
                     if (ristraBolas.get(i).getColor() != null) {
                         if (ristraBolas.get(posicion).getColor().equals(ristraBolas.get(i).getColor())) {
                             acumulador2++;
-                            System.out.println(ristraBolas.get(posicion).getColor() + " 2 " + (acumulador2-1) + " " + ristraBolas.get(i).getColor());
+                            System.out.println(ristraBolas.get(posicion).getColor() + " 2 " + (acumulador2 - 1) + " " + ristraBolas.get(i).getColor());
                         } else {
                             break;
                         }

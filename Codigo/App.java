@@ -44,7 +44,7 @@ public class App {
 
                             ristra.avanzarRistra();
                             ristra.mostrarRistra();
-                            System.out.println("\nBola a disparar: " + bola.toString());
+                            System.out.println("\033[30m\nBola a disparar: " + bola.toString());
 
                             String[] elecciones = {"SI", "NO", "EXIT"};
                             int eleccion = JOptionPane.showOptionDialog(
