@@ -1,4 +1,4 @@
-package PedirDatos;
+package Utilidades;
 
 import javax.swing.JOptionPane;
 

@@ -2,7 +2,7 @@ package Codigo;
 
 import static Utilidades.Constantes.FIN;
 import Excepciones.FueraDeRango;
-import PedirDatos.Pedir;
+import Utilidades.Pedir;
 import java.util.ArrayList;
 
 public class Ristra implements IRistra {
