@@ -1,6 +1,7 @@
 package Codigo;
 
 import Excepciones.FueraDeRango;
+import Excepciones.ListaVacia;
 
 public class GestionarRistra {
 
@@ -19,7 +20,9 @@ public class GestionarRistra {
             System.out.println("Disparada");
         } catch (FueraDeRango ex) {
             System.out.println(ex.getMessage());
-        } 
+        } catch (ListaVacia ex){
+            System.out.println(ex.getMessage());
+        }
     }
 
     public int tamaño() {
@@ -27,7 +30,7 @@ public class GestionarRistra {
     }
 
     public void mostrarRistra() {
-        ristraBolas.mostrarSegunVanSaliendo(ristraBolas.invertir());
+        ristraBolas.mostrarConFormato(ristraBolas.invertir());
 
     }
     

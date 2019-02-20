@@ -1,11 +1,12 @@
 package Codigo;
 
+import Excepciones.ListaVacia;
 import static Utilidades.Constantes.FIN;
 import javax.swing.JOptionPane;
 
 public class App {
 
-    public App() {
+    public App(){
         String[] inicio = {"INICIAR PARTIDA", "EXIT"};
         int iniciar = JOptionPane.showOptionDialog(
                 null,
@@ -64,6 +65,7 @@ public class App {
                                     break;
                                 case 2:
                                     JOptionPane.showMessageDialog(null, "Has abandonado las partida\nPuntuacion: " + ristra.getPuntuacion());
+                                    System.out.println("\033[30m");
                                     System.exit(FIN);
                                 default:
                                     break;
@@ -83,6 +85,7 @@ public class App {
                 ristra.mostrarRistra();
 
                 JOptionPane.showMessageDialog(null, "HAS PERDIDO \nPuntuacion: " + ristra.getPuntuacion());
+                System.out.println("\033[30m");
                 System.out.println("");
                 break;
             default:

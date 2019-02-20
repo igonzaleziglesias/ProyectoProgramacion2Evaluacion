@@ -11,13 +11,14 @@ public class DarColores {
                 return ("\033[32m*");
 
             case 3:
-                return ("\033[33m*");
 
-            case 4:
                 return ("\033[34m*");
+            case 4:
 
+                return ("\033[33m*");
             default:
                 break;
-        }return "Error";
+        }
+        return "Error";
     }
 }
