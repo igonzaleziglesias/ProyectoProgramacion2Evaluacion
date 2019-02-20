@@ -5,70 +5,90 @@ import javax.swing.JOptionPane;
 
 public class App {
 
-    public App(){
-        String[] opciones = {"PRINCIPIANTE", "INTERMEDIO", "AVANZADO"};
-        int opcion = JOptionPane.showOptionDialog(
+    public App() {
+        String[] inicio = {"INICIAR PARTIDA", "EXIT"};
+        int iniciar = JOptionPane.showOptionDialog(
                 null,
                 "Elegir nivel",
                 null,
                 JOptionPane.DEFAULT_OPTION,
                 JOptionPane.INFORMATION_MESSAGE,
                 null,
-                opciones,
+                inicio,
                 null
         );
 
-        GestionarRistra ristra = new GestionarRistra();
-        Bola bola = new Bola();
+        switch (iniciar) {
+            case 0:
 
-        do {
-            boolean disparada = false;
+                String[] opciones = {"PRINCIPIANTE", "INTERMEDIO", "AVANZADO"};
+                int opcion = JOptionPane.showOptionDialog(
+                        null,
+                        "Elegir nivel",
+                        null,
+                        JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.INFORMATION_MESSAGE,
+                        null,
+                        opciones,
+                        null
+                );
 
-            switch (opcion) {
-                case 0:
+                GestionarRistra ristra = new GestionarRistra();
+                Bola bola = new Bola();
 
-                    ristra.avanzarRistra();
-                    ristra.mostrarRistra();
-                    System.out.println("\nBola a disparar: " + bola.toString());
+                do {
+                    boolean disparada = false;
 
-                    String[] elecciones = {"SI", "NO", "EXIT"};
-                    int eleccion = JOptionPane.showOptionDialog(
-                            null,
-                            "Desea disparar una bola??",
-                            null,
-                            JOptionPane.DEFAULT_OPTION,
-                            JOptionPane.INFORMATION_MESSAGE,
-                            null,
-                            elecciones,
-                            null
-                    );
-                    switch (eleccion) {
+                    switch (opcion) {
                         case 0:
-                            ristra.dispararBola(bola);
-                            bola = new Bola();
+
+                            ristra.avanzarRistra();
+                            ristra.mostrarRistra();
+                            System.out.println("\nBola a disparar: " + bola.toString());
+
+                            String[] elecciones = {"SI", "NO", "EXIT"};
+                            int eleccion = JOptionPane.showOptionDialog(
+                                    null,
+                                    "Desea disparar una bola??",
+                                    null,
+                                    JOptionPane.DEFAULT_OPTION,
+                                    JOptionPane.INFORMATION_MESSAGE,
+                                    null,
+                                    elecciones,
+                                    null
+                            );
+                            switch (eleccion) {
+                                case 0:
+                                    ristra.dispararBola(bola);
+                                    bola = new Bola();
+                                    break;
+                                case 2:
+                                    JOptionPane.showMessageDialog(null, "Has abandonado las partida\nPuntuacion: " + ristra.getPuntuacion());
+                                    System.exit(FIN);
+                                default:
+                                    break;
+                            }
+
+                            break;
+
+                        case 1:
                             break;
                         case 2:
-                            JOptionPane.showMessageDialog(null, "Has abandonado las partida\nPuntuacion: "+ristra.getPuntuacion());
-                            System.exit(FIN);
+                            break;
                         default:
                             break;
                     }
 
-                    break;
+                } while (ristra.tamaño() < FIN);
+                ristra.mostrarRistra();
 
-                case 1:
-                    break;
-                case 2:
-                    break;
-                default:
-                    break;
-            }
-
-        } while (ristra.tamaño() < FIN);
-        ristra.mostrarRistra();
-        
-        JOptionPane.showMessageDialog(null, "HAS PERDIDO \nPuntuacion: "+ristra.getPuntuacion());
-        System.out.println("");
+                JOptionPane.showMessageDialog(null, "HAS PERDIDO \nPuntuacion: " + ristra.getPuntuacion());
+                System.out.println("");
+                break;
+            default:
+                break;
+        }
 
     }
+
 }
