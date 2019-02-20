@@ -10,7 +10,7 @@ public class MetodosAuxiliares {
             try {
                 if (ristraBolas.get(posicion).getColor().equals(ristraBolas.get(i).getColor())) {
                     acumulador2++;
-                    System.out.println(ristraBolas.get(posicion).getColor() + " 2 " + (acumulador2 - 1) + " " + ristraBolas.get(i).getColor());
+//                    System.out.println(ristraBolas.get(posicion).getColor() + " 2 " + (acumulador2 - 1) + " " + ristraBolas.get(i).getColor());
                 } else {
                     break;
                 }
@@ -28,7 +28,7 @@ public class MetodosAuxiliares {
             try {
                 if (ristraBolas.get(posicion).getColor().equals(ristraBolas.get(i).getColor())) {
                     acumulador++;
-                    System.out.println(ristraBolas.get(posicion).getColor() + " 1 " + (acumulador - 1) + " " + ristraBolas.get(i).getColor());
+//                    System.out.println(ristraBolas.get(posicion).getColor() + " 1 " + (acumulador - 1) + " " + ristraBolas.get(i).getColor());
                 } else {
                     break;
                 }

@@ -12,5 +12,6 @@ public interface IRistra {
     void mostrarConFormato(ArrayList<Bola> bola);
     ArrayList<Bola> disparar(Bola bola)throws FueraDeRango,ListaVacia ;
     void explotar(int posicion, int acumulador, int acumulador2) throws ListaVacia;
-    void puntuacion(int bolasJuntas);
+    int puntuacion(int bolasJuntas);
+    int concatenarExplosiones(Bola bola, int control, int puntos) throws FueraDeRango, ListaVacia;
 }
