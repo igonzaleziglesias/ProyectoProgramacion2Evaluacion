@@ -104,10 +104,11 @@ public class Ristra implements IRistra {
                 System.out.println("Eliminando Elemento");
 
                 puntos = concatenarExplosiones(bolaComodin, posicion - controlador, puntos);
-                System.out.println("puntuacion.this: " + this.puntuacion);
+                System.out.println("puntuacion.this: " + this.puntuacion+" puntos a sumar: "+puntos );
+
             } catch (Exception ex) {
                 System.out.println("Siguiente Posicion nula");
-            }
+            }finally{}
 
         } else {
 
@@ -135,14 +136,15 @@ public class Ristra implements IRistra {
                         System.out.println("Eliminando Elemento");
 
                         puntos = concatenarExplosiones(bolaComodin, posicion - controlador, puntos);
-                        System.out.println("puntuacion.this: " + this.puntuacion);
+                        System.out.println("puntuacion.this: " + this.puntuacion+" puntos a sumar: "+puntos );
                     } catch (Exception ex) {
                         System.out.println("Siguiente Posicion nula");
-                    }
+                    }finally{}
                     
                 }
             }
-        }this.puntuacion = this.puntuacion + puntos;
+        } this.puntuacion = this.puntuacion + puntos;
+                
         return ristraBolas;
     }
 
