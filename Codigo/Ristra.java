@@ -123,7 +123,7 @@ public class Ristra implements IRistra {
 //                System.out.println("controlador: "+controlador);
 
                 int bolasJuntas = (acumulador + acumulador2 - 1);
-//                System.out.println("acumulador " + bolasJuntas);//restamos 1 para no contar dos veces la posicion del elemento introducido
+                System.out.println("acumuladorBolasExplotan: " + bolasJuntas);//restamos 1 para no contar dos veces la posicion del elemento introducido
 
                 if (bolasJuntas >= 3) {//hace explotar el conjunto de bolas si al disparar hay 3 o mas bolas iguales juntas
                     explotar(posicion, acumulador, acumulador2);
@@ -210,7 +210,7 @@ public class Ristra implements IRistra {
                 controlador = acumulador2 - 1;
                 System.out.println("controlador: " + posicion + "-" + controlador);
                 bolasJuntas = (acumulador + acumulador2 - 1);
-//                System.out.println("acumulador " + bolasJuntas);//restamos 1 para no contar dos veces la posicion del elemento introducido
+                System.out.println("acumuladorBolasExplotan2 " + bolasJuntas);//restamos 1 para no contar dos veces la posicion del elemento introducido
 
                 if (bolasJuntas >= 3) {//hace explotar el conjunto de bolas si al disparar hay 3 o mas bolas iguales juntas
                     explotar(posicion, acumulador, acumulador2);
@@ -234,7 +234,7 @@ public class Ristra implements IRistra {
                     System.out.println("controlador: " + posicion + "-" + controlador);
 
                     bolasJuntas = (acumulador + acumulador2 - 1);
-//                System.out.println("acumulador " + bolasJuntas);//restamos 1 para no contar dos veces la posicion del elemento introducido
+                    System.out.println("acumuladorBolasJuntas2 " + bolasJuntas);//restamos 1 para no contar dos veces la posicion del elemento introducido
 
                     if (bolasJuntas >= 3) {//hace explotar el conjunto de bolas si al disparar hay 3 o mas bolas iguales juntas
                         explotar(posicion, acumulador, acumulador2);
