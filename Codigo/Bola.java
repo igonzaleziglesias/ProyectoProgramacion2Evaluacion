@@ -7,7 +7,7 @@ public class Bola {
     private String color;
     private String bolita;
 
-    public Bola() {
+    public Bola() {//crear una bola de un color asignado a un valor numerico genereado aleatoriamente
         DarColores color = new DarColores();
         int n = ((int) (Math.random() * 3) + 1);
         switch (n) {
