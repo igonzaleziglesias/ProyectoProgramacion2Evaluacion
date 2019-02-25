@@ -1,7 +1,9 @@
 package Niveles;
 
+import static Codigo.App.controlador;
 import Codigo.Bola;
 import Codigo.GestionarRistra;
+import EasterEgg.EasterEgg;
 import static Utilidades.Constantes.FIN;
 import javax.swing.JOptionPane;
 
@@ -9,17 +11,23 @@ public class Avanzado {
 
     public Avanzado(GestionarRistra ristra) {
         Bola bola = new Bola();
-        
-        ristra.mostrarRistra();
+
         System.out.print("Avanzando la ristra de bolas ");
         ristra.avanzarRistra();
         ristra.avanzarRistra();
         ristra.avanzarRistra();
-        if (ristra.tamaño() == FIN) {
-            System.exit(0);
+
+        if ((ristra.tamaño() > 3) && (controlador == 0)) {
+            if (ristra.getPrimerElementoRistra().getColor().equals("R") && ristra.getSegundoElementoRistra().getColor().equals("Z") && ristra.getTercerElementoRistra().getColor().equals("V") && (ristra.getPuntuacion() == 10)) {
+                EasterEgg egg = new EasterEgg();
+                controlador = 1;
+            }
         }
         ristra.mostrarRistra();
-        
+        if (ristra.tamaño() == FIN) {
+            JOptionPane.showMessageDialog(null, "HAS PERDIDO \nPuntuacion: " + ristra.getPuntuacion());
+            System.exit(0);
+        }
         System.out.println("Bola a disparar: " + bola.toString());
 
         String[] elecciones = {"SI", "NO", "EXIT"};

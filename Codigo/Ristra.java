@@ -10,6 +10,18 @@ public class Ristra implements IRistra {
     private int puntuacion;
     private ArrayList<Bola> ristraBolas = new ArrayList<Bola>();
 
+    public Bola primerElemento() {
+        return ristraBolas.get(0);
+    }
+
+    public Bola segundoElemento() {
+        return ristraBolas.get(1);
+    }
+
+    public Bola tercerElemento() {
+        return ristraBolas.get(2);
+    }
+
     public int getPuntuacion() {
         return puntuacion;
     }
@@ -205,6 +217,5 @@ public class Ristra implements IRistra {
         control = 0;
         return ristraBolas;
     }
-    
-    
+
 }

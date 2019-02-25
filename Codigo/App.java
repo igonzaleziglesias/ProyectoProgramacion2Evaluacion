@@ -6,7 +6,7 @@ import static Utilidades.Constantes.FIN;
 import javax.swing.JOptionPane;
 
 public class App {
-
+    public static int controlador;
     public App(){
         String[] inicio = {"INICIAR PARTIDA", "EXIT"};
         int iniciar = JOptionPane.showOptionDialog(
@@ -37,7 +37,7 @@ public class App {
 
                 GestionarRistra ristra = new GestionarRistra();
                 
-
+                
                 do {
                     boolean disparada = false;
 

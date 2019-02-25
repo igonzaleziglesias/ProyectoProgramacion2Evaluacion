@@ -14,13 +14,25 @@ public class GestionarRistra {
 
     }
 
+    public Bola getPrimerElementoRistra() {
+        return ristraBolas.primerElemento();
+    }
+
+    public Bola getSegundoElementoRistra() {
+        return ristraBolas.segundoElemento();
+    }
+
+    public Bola getTercerElementoRistra() {
+        return ristraBolas.tercerElemento();
+    }
+
     public void dispararBola(Bola bola) {
         try {//intenta disparar una bola contra la ristra y lanza la excepcion si no consigue alcanzarla
-            ristraBolas.disparar(bola,0);
+            ristraBolas.disparar(bola, 0);
             System.out.println("Disparada");
         } catch (FueraDeRango ex) {
             System.out.println(ex.getMessage());
-        } catch (ListaVacia ex){
+        } catch (ListaVacia ex) {
             System.out.println(ex.getMessage());
         }
     }
@@ -33,8 +45,8 @@ public class GestionarRistra {
         ristraBolas.mostrarConFormato(ristraBolas.invertir());
 
     }
-    
-    public int getPuntuacion(){
+
+    public int getPuntuacion() {
         return ristraBolas.getPuntuacion();
     }
 
