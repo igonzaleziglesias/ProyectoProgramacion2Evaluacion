@@ -45,7 +45,7 @@ public class App {
 
                             ristra.avanzarRistra();
                             ristra.mostrarRistra();
-                            System.out.println("\033[30m\nBola a disparar: " + bola.toString());
+                            System.out.println("Bola a disparar: " + bola.toString());
 
                             String[] elecciones = {"SI", "NO", "EXIT"};
                             int eleccion = JOptionPane.showOptionDialog(
@@ -65,7 +65,6 @@ public class App {
                                     break;
                                 case 2:
                                     JOptionPane.showMessageDialog(null, "Has abandonado las partida\nPuntuacion: " + ristra.getPuntuacion());
-                                    System.out.println("\033[30m");
                                     System.exit(FIN);
                                 default:
                                     break;
@@ -85,7 +84,6 @@ public class App {
                 ristra.mostrarRistra();
 
                 JOptionPane.showMessageDialog(null, "HAS PERDIDO \nPuntuacion: " + ristra.getPuntuacion());
-                System.out.println("\033[30m");
                 System.out.println("");
                 break;
             default:
