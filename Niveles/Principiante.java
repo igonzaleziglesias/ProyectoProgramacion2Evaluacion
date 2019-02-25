@@ -16,8 +16,13 @@ public class Principiante {
         ristra.avanzarRistra();
 
         if ((ristra.tamaño() > 3) && (controlador == 0)) {
-            if (ristra.getPrimerElementoRistra().getColor().equals("R") && ristra.getSegundoElementoRistra().getColor().equals("Z") && ristra.getTercerElementoRistra().getColor().equals("V") && (ristra.getPuntuacion() == 10)) {
-                EasterEgg egg = new EasterEgg();
+            if (ristra.getPrimerElementoRistra().getColor().equals("R")
+                    && ristra.getSegundoElementoRistra().getColor().equals("Z")
+                    && ristra.getTercerElementoRistra().getColor().equals("V")
+                    && ristra.getCuartoElementoRistra().getColor().equals("R")
+                    && ristra.getQuintoElementoRistra().getColor().equals("Z")
+                    && ristra.getSextoElementoRistra().getColor().equals("V")){
+                EasterEgg egg = new EasterEgg(ristra);
                 controlador = 1;
             }
         }

@@ -21,9 +21,23 @@ public class Ristra implements IRistra {
     public Bola tercerElemento() {
         return ristraBolas.get(2);
     }
+    public Bola cuartoElemento() {
+        return ristraBolas.get(3);
+    }
 
+    public Bola quintoElemento() {
+        return ristraBolas.get(4);
+    }
+
+    public Bola sextoElemento() {
+        return ristraBolas.get(5);
+    }
     public int getPuntuacion() {
         return puntuacion;
+    }
+    
+    public void setPuntuacion(int puntos){
+        this.puntuacion=puntos;
     }
 
     public void nuevaBola(Bola bola) {

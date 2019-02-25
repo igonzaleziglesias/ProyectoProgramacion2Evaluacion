@@ -26,6 +26,18 @@ public class GestionarRistra {
         return ristraBolas.tercerElemento();
     }
 
+    public Bola getCuartoElementoRistra() {
+        return ristraBolas.cuartoElemento();
+    }
+
+    public Bola getQuintoElementoRistra() {
+        return ristraBolas.quintoElemento();
+    }
+
+    public Bola getSextoElementoRistra() {
+        return ristraBolas.sextoElemento();
+    }
+
     public void dispararBola(Bola bola) {
         try {//intenta disparar una bola contra la ristra y lanza la excepcion si no consigue alcanzarla
             ristraBolas.disparar(bola, 0);
@@ -48,6 +60,10 @@ public class GestionarRistra {
 
     public int getPuntuacion() {
         return ristraBolas.getPuntuacion();
+    }
+
+    public void setPuntuacion(int puntos) {
+        ristraBolas.setPuntuacion(puntos);
     }
 
 }

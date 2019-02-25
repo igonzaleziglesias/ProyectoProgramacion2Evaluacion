@@ -1,10 +1,11 @@
 package EasterEgg;
 
+import Codigo.GestionarRistra;
 import javax.swing.JOptionPane;
 
 public class EasterEgg {
 
-    public EasterEgg() {
+    public EasterEgg(GestionarRistra ristra) {
 
         JOptionPane.showMessageDialog(null,
                "_____________________________$$$$$$$$_______________________________\n"
@@ -30,6 +31,9 @@ public class EasterEgg {
                 + "__Y_E_____________$$____________________________________$$__________\n"
                 + "____Z____________$$_____________________________________$$__________\n"
                 + "_________________$$_____________________________________$$__________\n");
+        
+        
+        ristra.setPuntuacion(ristra.getPuntuacion()+1000);
     }
 
 }
