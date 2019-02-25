@@ -1,6 +1,7 @@
 package Codigo;
 
 import Excepciones.ListaVacia;
+import Niveles.*;
 import static Utilidades.Constantes.FIN;
 import javax.swing.JOptionPane;
 
@@ -35,46 +36,20 @@ public class App {
                 );
 
                 GestionarRistra ristra = new GestionarRistra();
-                Bola bola = new Bola();
+                
 
                 do {
                     boolean disparada = false;
 
                     switch (opcion) {
                         case 0:
-
-                            ristra.avanzarRistra();
-                            ristra.mostrarRistra();
-                            System.out.println("Bola a disparar: " + bola.toString());
-
-                            String[] elecciones = {"SI", "NO", "EXIT"};
-                            int eleccion = JOptionPane.showOptionDialog(
-                                    null,
-                                    "Desea disparar una bola??",
-                                    null,
-                                    JOptionPane.DEFAULT_OPTION,
-                                    JOptionPane.INFORMATION_MESSAGE,
-                                    null,
-                                    elecciones,
-                                    null
-                            );
-                            switch (eleccion) {
-                                case 0:
-                                    ristra.dispararBola(bola);
-                                    bola = new Bola();
-                                    break;
-                                case 2:
-                                    JOptionPane.showMessageDialog(null, "Has abandonado las partida\nPuntuacion: " + ristra.getPuntuacion());
-                                    System.exit(FIN);
-                                default:
-                                    break;
-                            }
-
+                                Principiante principiante = new Principiante(ristra);              
                             break;
-
                         case 1:
+                                Intermedio intermedio = new Intermedio(ristra);
                             break;
                         case 2:
+                                Avanzado avanzado = new Avanzado(ristra);
                             break;
                         default:
                             break;
