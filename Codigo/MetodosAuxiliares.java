@@ -1,7 +1,6 @@
 package Codigo;
 
 import Excepciones.FueraDeRango;
-import Excepciones.ListaVacia;
 import Utilidades.Pedir;
 import java.util.ArrayList;
 
