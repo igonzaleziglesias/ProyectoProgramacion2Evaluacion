@@ -2,6 +2,7 @@ package Codigo;
 
 import Excepciones.FueraDeRango;
 import Excepciones.ListaVacia;
+import static Utilidades.Constantes.PUNTOSCONCA;
 import java.util.ArrayList;
 
 public class Ristra implements IRistra {
@@ -128,7 +129,7 @@ public class Ristra implements IRistra {
     }
 
     public int puntuacionConcatenacion() {
-        return 5;
+        return PUNTOSCONCA;
     }
 
     public ArrayList<Bola> disparar(Bola bola, int posicionConcatena) throws FueraDeRango, ListaVacia {
