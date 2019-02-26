@@ -2,6 +2,7 @@ package Codigo;
 
 import Excepciones.FueraDeRango;
 import Excepciones.ListaVacia;
+import Sonido.SonidoExplotar;
 import static Utilidades.Constantes.PUNTOSCONCA;
 import java.util.ArrayList;
 
@@ -114,7 +115,7 @@ public class Ristra implements IRistra {
             i++;
             acumulador2--;
         }
-
+        SonidoExplotar sonido = new SonidoExplotar();
     }
 
     public int puntuacion(int bolasJuntas) {
