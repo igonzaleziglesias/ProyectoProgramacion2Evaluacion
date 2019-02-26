@@ -33,6 +33,7 @@ public class Ristra implements IRistra {
     public Bola sextoElemento() {
         return ristraBolas.get(5);
     }
+    
     public int getPuntuacion() {
         return puntuacion;
     }
