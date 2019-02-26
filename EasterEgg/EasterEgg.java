@@ -7,7 +7,7 @@ public class EasterEgg {
 
     public EasterEgg(GestionarRistra ristra) {
 
-        JOptionPane.showMessageDialog(null,
+        System.out.println(
                "_____________________________$$$$$$$$_______________________________\n"
                 + "C___________________$$$$$$$____________$$$$$$$$$____________________\n"
                 + "R_________________$$____________________________$$$$________________\n"
