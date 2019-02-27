@@ -7,8 +7,8 @@ import java.util.ArrayList;
 public class MetodosAuxiliares {
 
 
-    public int contarBolasPorDelante(int posicion, ArrayList<Bola> ristraBolas, int acumulador2) {
-        for (int i = posicion - 1; i >= 0; i--) { //cuenta las bolas que hay despues del disparo iguales a la bola disparada(cuenta la bola disparada)
+    public int contarBolasPorDelante(int posicion, ArrayList<Bola> ristraBolas, int acumulador2) {//cuenta las bolas que hay despues del disparo iguales a la bola disparada(cuenta la bola disparada)
+        for (int i = posicion - 1; i >= 0; i--) { 
             try {
                 if (ristraBolas.get(posicion).getColor().equals(ristraBolas.get(i).getColor())) {
                     acumulador2++;                    
@@ -22,8 +22,8 @@ public class MetodosAuxiliares {
         return acumulador2;
     }
 
-    public int contarBolasDetras(int posicion, ArrayList<Bola> ristraBolas, int acumulador, int longitud) {
-        for (int i = posicion + 1; i <= longitud; i++) {//cuenta las bolas que hay antes del disparo iguales a la bola disparada(cuenta la bola disparada)
+    public int contarBolasDetras(int posicion, ArrayList<Bola> ristraBolas, int acumulador, int longitud) {//cuenta las bolas que hay antes del disparo iguales a la bola disparada(cuenta la bola disparada)
+        for (int i = posicion + 1; i <= longitud; i++) {
 //          System.out.println(ristraBolas.get(i));System.out.println(ristraBolas.get(posicion));
             try {
                 if (ristraBolas.get(posicion).getColor().equals(ristraBolas.get(i).getColor())) {
@@ -39,7 +39,7 @@ public class MetodosAuxiliares {
         return acumulador;
     }
 
-    public int pedirPosicion(int longitud) throws FueraDeRango {
+    public int pedirPosicion(int longitud) throws FueraDeRango {//Metodo para pedir la posicion en la que insertar la bola disparada
         boolean numero = true;
         int posicion = 0;
         do {
@@ -51,7 +51,7 @@ public class MetodosAuxiliares {
                 numero = false;
             }
         } while (numero != true);
-                if (posicion < 0) {
+                if (posicion < 0) {//comprueba que el disparo sea a la ristra de bolas y si no lanza una excepcion fuera de rango
             throw new FueraDeRango("Disparo fallido");
         }
         if (posicion > longitud) {//comprueba que el disparo sea a la ristra de bolas y si no lanza una excepcion fuera de rango

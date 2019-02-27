@@ -32,12 +32,12 @@ public class Bola {
         }
     }
 
-    public String getColor() {
+    public String getColor() {//obtener el color, usamos el valor del string y no el numerico para hacer las comparaciones
         return color;
     }
 
     @Override
-    public String toString() {
+    public String toString() {//imprimir la bola de color
         return bolita;
     }
 

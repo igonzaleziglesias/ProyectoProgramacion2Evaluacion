@@ -4,7 +4,7 @@ import Excepciones.FueraDeRango;
 import Excepciones.ListaVacia;
 import java.util.ArrayList;
 
-public interface IRistra {
+public interface IRistra {//metodos esenciales de la ristra
    public abstract void nuevaBola(Bola bola);
    public abstract void mostrarConFormato(ArrayList<Bola> bola);
    public abstract ArrayList<Bola> disparar(Bola bola,int pos)throws FueraDeRango,ListaVacia ;

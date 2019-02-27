@@ -12,53 +12,54 @@ public class Ristra implements IRistra {
     private int puntuacion;
     private ArrayList<Bola> ristraBolas = new ArrayList<Bola>();
 
-    public Bola primerElemento() {
+    public Bola primerElemento() {//obtenemos primer elemento (EasterEgg)
         return ristraBolas.get(0);
     }
 
-    public Bola segundoElemento() {
+    public Bola segundoElemento() {//obtenemos segundo elemento (EasterEgg)
         return ristraBolas.get(1);
     }
 
-    public Bola tercerElemento() {
+    public Bola tercerElemento() {//obtenemos tercer elemento (EasterEgg)
         return ristraBolas.get(2);
     }
-    public Bola cuartoElemento() {
+
+    public Bola cuartoElemento() {//obtenemos cuarto elemento (EasterEgg)
         return ristraBolas.get(3);
     }
 
-    public Bola quintoElemento() {
+    public Bola quintoElemento() {//obtenemos quinto elemento (EasterEgg)
         return ristraBolas.get(4);
     }
 
-    public Bola sextoElemento() {
+    public Bola sextoElemento() {//obtenemos sexto elemento (EasterEgg)
         return ristraBolas.get(5);
     }
-    
-    public int getPuntuacion() {
+
+    public int getPuntuacion() {//metodo par obtener la puntuacion de la partida
         return puntuacion;
     }
-    
-    public void setPuntuacion(int puntos){
-        this.puntuacion=puntos;
+
+    public void setPuntuacion(int puntos) {//Metodo para introducir el Bonnus del EasterEgg
+        this.puntuacion = puntos;
     }
 
-    public void nuevaBola(Bola bola) {
+    public void nuevaBola(Bola bola) {//añadir nueva bola
         ristraBolas.add(bola);
     }
 
-    public int longitud() {
+    public int longitud() {//Obtener el tamaño de la ristra de bolas
         return ristraBolas.size();
     }
 
-    public void mostrarAñadiendoDerecha() {
+    public void mostrarAñadiendoDerecha() {//mostrar ristra bolas sin formato
         System.out.println("");
         for (Bola ele : ristraBolas) {
             System.out.print(ele.toString());
         }
     }
 
-    public ArrayList<Bola> invertir() {
+    public ArrayList<Bola> invertir() {//dar formato a la ristra(invirtiendo el orden en el que se muestra
         ArrayList<Bola> reverse;
 
         if (ristraBolas != null) {
@@ -72,7 +73,7 @@ public class Ristra implements IRistra {
         return reverse;
     }
 
-    public void mostrarConFormato(ArrayList<Bola> bola) {
+    public void mostrarConFormato(ArrayList<Bola> bola) {//mostrar con el formato 
         System.out.println("");
         System.out.println("Ristra: ");
         System.out.println("");
@@ -91,7 +92,7 @@ public class Ristra implements IRistra {
         System.out.println("\nPuntuacion: " + puntuacion);
     }
 
-    public void explotar(int posicion, int acumulador, int acumulador2) throws ListaVacia {
+    public void explotar(int posicion, int acumulador, int acumulador2) throws ListaVacia {//metodo para explotar si hay mas de 3 bolas juntas
         if (ristraBolas.isEmpty()) {
             throw new ListaVacia("Lista Vacia");
         }
@@ -118,7 +119,7 @@ public class Ristra implements IRistra {
         SonidoExplotar sonido = new SonidoExplotar();
     }
 
-    public int puntuacion(int bolasJuntas) {
+    public int puntuacion(int bolasJuntas) {//metodo para puntuar las explosiones
         int puntos = 1;
         if (bolasJuntas > 3) {
             for (int i = 4; i <= bolasJuntas; i++) {
@@ -130,11 +131,11 @@ public class Ristra implements IRistra {
         return puntos;
     }
 
-    public int puntuacionConcatenacion() {
+    public int puntuacionConcatenacion() {//metodo que suma 5 si concatena explosiones(bonnus concatenacion de explosiones)
         return PUNTOSCONCA;
     }
 
-    public ArrayList<Bola> disparar(Bola bola, int posicionConcatena) throws FueraDeRango, ListaVacia {
+    public ArrayList<Bola> disparar(Bola bola, int posicionConcatena) throws FueraDeRango, ListaVacia {//metodo para disparar una bola a la ristra
         MetodosAuxiliares ayuda = new MetodosAuxiliares();
 
         int posicion = 0;

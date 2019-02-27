@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 
 public class App {
     public static int controlador;
-    public App(){
+    public App(){//menu iniciar partida o no
         String[] inicio = {"INICIAR PARTIDA", "EXIT"};
         int iniciar = JOptionPane.showOptionDialog(
                 null,
@@ -20,7 +20,7 @@ public class App {
                 null
         );
 
-        switch (iniciar) {
+        switch (iniciar) { //menu elegir nivel de dificultad
             case 0:
 
                 String[] opciones = {"PRINCIPIANTE", "INTERMEDIO", "AVANZADO"};
@@ -43,19 +43,19 @@ public class App {
 
                     switch (opcion) {
                         case 0:
-                                Principiante principiante = new Principiante(ristra);              
+                                Principiante principiante = new Principiante(ristra);   //nivel principiante           
                             break;
                         case 1:
-                                Intermedio intermedio = new Intermedio(ristra);
+                                Intermedio intermedio = new Intermedio(ristra); //nivel intermedio
                             break;
                         case 2:
-                                Avanzado avanzado = new Avanzado(ristra);
+                                Avanzado avanzado = new Avanzado(ristra); //nivel avanzado
                             break;
                         default:
                             break;
                     }
 
-                } while (ristra.tamaño() < FIN);
+                } while (ristra.tamaño() < FIN);//condicion termina el programa 
                 ristra.mostrarRistra();
 
                 JOptionPane.showMessageDialog(null, "HAS PERDIDO \nPuntuacion: " + ristra.getPuntuacion());
