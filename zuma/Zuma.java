@@ -1,6 +1,6 @@
 package zuma;
 
-import Codigo.App;
+import codigo.App;
 
 public class Zuma {
 

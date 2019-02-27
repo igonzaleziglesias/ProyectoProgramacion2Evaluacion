@@ -1,7 +1,7 @@
-package Codigo;
+package codigo;
 
-import Excepciones.FueraDeRango;
-import Excepciones.ListaVacia;
+import excepciones.FueraDeRango;
+import excepciones.ListaVacia;
 
 public class GestionarRistra {
 

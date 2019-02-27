@@ -1,7 +1,7 @@
-package Codigo;
+package codigo;
 
-import Excepciones.FueraDeRango;
-import Utilidades.Pedir;
+import excepciones.FueraDeRango;
+import utilidades.Pedir;
 import java.util.ArrayList;
 
 public class MetodosAuxiliares {

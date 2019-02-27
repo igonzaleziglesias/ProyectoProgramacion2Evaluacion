@@ -1,7 +1,7 @@
-package Codigo;
+package codigo;
 
-import Excepciones.FueraDeRango;
-import Excepciones.ListaVacia;
+import excepciones.FueraDeRango;
+import excepciones.ListaVacia;
 import java.util.ArrayList;
 
 public interface IRistra {//metodos esenciales de la ristra

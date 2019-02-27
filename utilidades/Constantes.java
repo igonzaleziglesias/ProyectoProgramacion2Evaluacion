@@ -1,4 +1,4 @@
-package Utilidades;
+package utilidades;
 
 public interface Constantes {
 

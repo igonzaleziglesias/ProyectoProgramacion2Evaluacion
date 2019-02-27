@@ -1,9 +1,9 @@
-package Codigo;
+package codigo;
 
-import Excepciones.FueraDeRango;
-import Excepciones.ListaVacia;
-import Sonido.SonidoExplotar;
-import static Utilidades.Constantes.PUNTOSCONCA;
+import excepciones.FueraDeRango;
+import excepciones.ListaVacia;
+import sonido.SonidoExplotar;
+import static utilidades.Constantes.PUNTOSCONCA;
 import java.util.ArrayList;
 
 public class Ristra implements IRistra {

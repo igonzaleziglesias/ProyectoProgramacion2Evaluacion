@@ -1,8 +1,10 @@
-package Codigo;
+package codigo;
 
-import Excepciones.ListaVacia;
-import Niveles.*;
-import static Utilidades.Constantes.FIN;
+import niveles.Avanzado;
+import niveles.Intermedio;
+import niveles.Principiante;
+import excepciones.ListaVacia;
+import static utilidades.Constantes.FIN;
 import javax.swing.JOptionPane;
 
 public class App {

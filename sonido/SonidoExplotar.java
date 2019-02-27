@@ -1,4 +1,4 @@
-package Sonido;
+package sonido;
 
 import java.io.File;
 import javax.sound.sampled.AudioSystem;

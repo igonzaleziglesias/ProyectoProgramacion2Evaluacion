@@ -1,10 +1,10 @@
-package Niveles;
+package niveles;
 
-import static Codigo.App.controlador;
-import Codigo.Bola;
-import Codigo.GestionarRistra;
-import EasterEgg.EasterEgg;
-import static Utilidades.Constantes.FIN;
+import static codigo.App.controlador;
+import codigo.Bola;
+import codigo.GestionarRistra;
+import easterEgg.EasterEgg;
+import static utilidades.Constantes.FIN;
 import javax.swing.JOptionPane;
 
 public class Principiante {

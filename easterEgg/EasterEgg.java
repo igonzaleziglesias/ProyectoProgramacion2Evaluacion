@@ -1,6 +1,6 @@
-package EasterEgg;
+package easterEgg;
 
-import Codigo.GestionarRistra;
+import codigo.GestionarRistra;
 
 public class EasterEgg {
 

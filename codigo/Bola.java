@@ -1,6 +1,6 @@
-package Codigo;
+package codigo;
 
-import Utilidades.DarColores;
+import utilidades.DarColores;
 
 public class Bola {
 
