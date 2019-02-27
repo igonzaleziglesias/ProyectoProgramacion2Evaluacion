@@ -9,8 +9,8 @@ public class SonidoExplotar {
     public SonidoExplotar(){
         try {
             Clip sonido = AudioSystem.getClip();
-//            File a = new File("Balloon.wav.wav");//pc casa
-            File a = new File("/home/local/DANIELCASTELAO/igonzaleziglesias/Escritorio/Balloon.wav");//pc clase
+            File a = new File("Balloon.wav.wav");//pc casa
+//            File a = new File("/home/local/DANIELCASTELAO/igonzaleziglesias/Escritorio/Balloon.wav");//pc clase
             sonido.open(AudioSystem.getAudioInputStream(a));
             sonido.start();
 //            System.out.println("Reproduciendo 0.2s. de sonido...");
