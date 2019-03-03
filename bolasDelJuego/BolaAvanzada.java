@@ -1,15 +1,15 @@
-package codigo;
+package bolasDelJuego;
 
 import utilidades.DarColores;
 
-public class Bola {
+public class BolaAvanzada extends Bola {
 
     private String color;
     private String bolita;
 
-    public Bola() {//crear una bola de un color asignado a un valor numerico genereado aleatoriamente
+    public BolaAvanzada() {//crear una bola de un color asignado a un valor numerico genereado aleatoriamente
         DarColores color = new DarColores();
-        int n = ((int) (Math.random() * 3) + 1);
+        int n = ((int) (Math.random() * 5) + 1);
         switch (n) {
             case 1:
                 this.color = "R";
@@ -23,15 +23,20 @@ public class Bola {
                 this.color = "Z";
                 this.bolita = color.DarColores(3);
                 break;
-//            case 4:
-//                this.color = "A";
-//                this.bolita=color.DarColores(4);
-//                break;
+            case 4:
+                this.color = "A";
+                this.bolita = color.DarColores(4);
+                break;
+            case 5:
+                this.color = "M";
+                this.bolita = color.DarColores(5);
+                break;
             default:
                 break;
         }
     }
 
+    @Override
     public String getColor() {//obtener el color, usamos el valor del string y no el numerico para hacer las comparaciones
         return color;
     }

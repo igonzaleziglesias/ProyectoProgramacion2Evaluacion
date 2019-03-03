@@ -1,20 +1,22 @@
 package niveles;
 
 import static codigo.App.controlador;
-import codigo.Bola;
+import bolasDelJuego.Bola;
+import bolasDelJuego.BolaAvanzada;
 import codigo.GestionarRistra;
 import easterEgg.EasterEgg;
 import static utilidades.Constantes.FIN;
 import javax.swing.JOptionPane;
 
-public class Avanzado{
+public class Avanzado {
 
-    private Bola bola = new Bola();
+    private BolaAvanzada bola = new BolaAvanzada();
+    private BolaAvanzada bolaAvance;
 
     public Avanzado(GestionarRistra ristra) {
         do {
             System.out.print("Avanzando la ristra de bolas ");
-            ristra.avanzarRistra();
+            ristra.avanzarRistra(bolaAvance = new BolaAvanzada());
 
             if ((ristra.tamaño() > 3) && (controlador == 0)) {
                 if (ristra.getPrimerElementoRistra().getColor().equals("R")
@@ -50,7 +52,7 @@ public class Avanzado{
             switch (eleccion) {
                 case 0:
                     ristra.dispararBola(bola);
-                    this.bola = new Bola();
+                    this.bola = new BolaAvanzada();
                     break;
                 case 2:
                     JOptionPane.showMessageDialog(null, "Has abandonado las partida\nPuntuacion: " + ristra.getPuntuacion());

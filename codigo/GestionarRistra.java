@@ -1,5 +1,6 @@
 package codigo;
 
+import bolasDelJuego.Bola;
 import excepciones.FueraDeRango;
 import excepciones.ListaVacia;
 
@@ -8,8 +9,7 @@ public class GestionarRistra {
     private Bola bola;
     private Ristra ristraBolas = new Ristra();
 
-    public void avanzarRistra() {//avanza una posicion la ristra de bolas añadiendo una nueva bola
-        bola = new Bola();
+    public void avanzarRistra(Bola bola) {//avanza una posicion la ristra de bolas añadiendo una nueva bola
         ristraBolas.nuevaBola(bola);
 
     }

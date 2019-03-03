@@ -1,5 +1,6 @@
 package codigo;
 
+import bolasDelJuego.Bola;
 import excepciones.FueraDeRango;
 import utilidades.Pedir;
 import java.util.ArrayList;
