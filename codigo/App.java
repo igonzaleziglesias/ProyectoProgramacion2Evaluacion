@@ -8,8 +8,10 @@ import static utilidades.Constantes.FIN;
 import javax.swing.JOptionPane;
 
 public class App {
+
     public static int controlador;
-    public App(){//menu iniciar partida o no
+
+    public App() {//menu iniciar partida o no
         String[] inicio = {"INICIAR PARTIDA", "EXIT"};
         int iniciar = JOptionPane.showOptionDialog(
                 null,
@@ -38,30 +40,23 @@ public class App {
                 );
 
                 GestionarRistra ristra = new GestionarRistra();
-                
-                
-                do {
-                    boolean disparada = false;
 
-                    switch (opcion) {
-                        case 0:
-                                Principiante principiante = new Principiante(ristra);   //nivel principiante           
-                            break;
-                        case 1:
-                                Intermedio intermedio = new Intermedio(ristra); //nivel intermedio
-                            break;
-                        case 2:
-                                Avanzado avanzado = new Avanzado(ristra); //nivel avanzado
-                            break;
-                        default:
-                            break;
-                    }
+                boolean disparada = false;
 
-                } while (ristra.tamaño() < FIN);//condicion termina el programa 
-                ristra.mostrarRistra();
+                switch (opcion) {
+                    case 0:
+                        Principiante principiante = new Principiante(ristra);   //nivel principiante           
+                        break;
+                    case 1:
+                        Intermedio intermedio = new Intermedio(ristra); //nivel intermedio
+                        break;
+                    case 2:
+                        Avanzado avanzado = new Avanzado(ristra); //nivel avanzado
+                        break;
+                    default:
+                        break;
+                }
 
-                JOptionPane.showMessageDialog(null, "HAS PERDIDO \nPuntuacion: " + ristra.getPuntuacion());
-                System.out.println("");
                 break;
             default:
                 break;
