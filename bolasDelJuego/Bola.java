@@ -1,7 +1,5 @@
 package bolasDelJuego;
 
-import utilidades.DarColores;
-
 public class Bola {
 
     private String color;
