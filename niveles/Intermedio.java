@@ -1,8 +1,6 @@
 package niveles;
 
 import static codigo.App.controlador;
-import bolasDelJuego.Bola;
-import bolasDelJuego.BolaAvanzada;
 import bolasDelJuego.BolaIntermedia;
 import codigo.GestionarRistra;
 import easterEgg.EasterEgg;
@@ -11,9 +9,11 @@ import static utilidades.Constantes.FIN;
 import javax.swing.JOptionPane;
 
 public class Intermedio {
-  public Fichero fich = new Fichero();
+
+    public Fichero fich = new Fichero();
     private BolaIntermedia bola = new BolaIntermedia();
     private BolaIntermedia bolaAvance;
+
     public Intermedio(GestionarRistra ristra) {
         do {
             System.out.print("Avanzando la ristra de bolas ");
@@ -35,6 +35,8 @@ public class Intermedio {
 
             if (ristra.tamaño() == FIN) {
                 JOptionPane.showMessageDialog(null, "HAS PERDIDO \nPuntuacion: " + ristra.getPuntuacion());
+                fich.añadirPuntuacion(ristra.getPuntuacion());
+                fich.leerFichero();
                 System.exit(0);
             }
             System.out.println("Bola a disparar: " + bola.toString());
@@ -64,13 +66,11 @@ public class Intermedio {
                     break;
             }
         } while (ristra.tamaño() < FIN);//condicion termina el programa 
-        if(ristra.tamaño()>=FIN){
-           fich.añadirPuntuacion(ristra.getPuntuacion());
-           fich.leerFichero(); 
-        }
+
         ristra.mostrarRistra();
 
-        JOptionPane.showMessageDialog(null, "HAS PERDIDO \nPuntuacion: " + ristra.getPuntuacion());
+        JOptionPane.showMessageDialog(null, "HAS PERDIDO 2 \nPuntuacion: " + ristra.getPuntuacion());
+
         System.out.println("");
     }
 }

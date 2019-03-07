@@ -41,5 +41,6 @@ public class Fichero {
         } finally {
             sc.close();
         }
+        System.out.println("hola");
     }
 }

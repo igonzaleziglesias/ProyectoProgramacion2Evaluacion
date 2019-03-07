@@ -1,7 +1,6 @@
 package niveles;
 
 import static codigo.App.controlador;
-import bolasDelJuego.Bola;
 import bolasDelJuego.BolaAvanzada;
 import codigo.GestionarRistra;
 import easterEgg.EasterEgg;
@@ -36,6 +35,8 @@ public class Avanzado {
 
             if (ristra.tamaño() == FIN) {
                 JOptionPane.showMessageDialog(null, "HAS PERDIDO \nPuntuacion: " + ristra.getPuntuacion());
+                fich.añadirPuntuacion(ristra.getPuntuacion());
+                fich.leerFichero();
                 System.exit(0);
             }
             System.out.println("Bola a disparar: " + bola.toString());
@@ -65,13 +66,11 @@ public class Avanzado {
                     break;
             }
         } while (ristra.tamaño() < FIN);//condicion termina el programa 
-        if(ristra.tamaño()>=FIN){
-           fich.añadirPuntuacion(ristra.getPuntuacion());
-           fich.leerFichero(); 
-        }
+
         ristra.mostrarRistra();
 
-        JOptionPane.showMessageDialog(null, "HAS PERDIDO \nPuntuacion: " + ristra.getPuntuacion());
+        JOptionPane.showMessageDialog(null, "HAS PERDIDO 3 \nPuntuacion: " + ristra.getPuntuacion());
+
         System.out.println("");
     }
 }
