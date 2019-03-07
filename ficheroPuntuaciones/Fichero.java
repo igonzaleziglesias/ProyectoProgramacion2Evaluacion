@@ -15,12 +15,14 @@ public class Fichero {
     Scanner sc;
 
     public Fichero() {
-        fich = new File("/home/local/DANIELCASTELAO/igonzaleziglesias/Escritorio/puntuaciones.txt");
+//        fich = new File("/home/local/DANIELCASTELAO/igonzaleziglesias/Escritorio/puntuaciones.txt");
+        fich = new File("C:\\Users\\Usuario\\Desktop\\puntuaciones.txt");
     }
 
     public void añadirPuntuacion(int puntuacion) {
         try {
-            f = new PrintWriter(new FileWriter("/home/local/DANIELCASTELAO/igonzaleziglesias/Escritorio/puntuaciones.txt", true));
+//            f = new PrintWriter(new FileWriter("/home/local/DANIELCASTELAO/igonzaleziglesias/Escritorio/puntuaciones.txt", true));
+            f = new PrintWriter(new FileWriter("C:\\Users\\Usuario\\Desktop\\puntuaciones.txt", true));
             Usuario jugador = new Usuario(Pedir.pedirString("Nick Name: "), puntuacion);
             f.println(jugador);
         } catch (IOException ex) {
@@ -41,6 +43,5 @@ public class Fichero {
         } finally {
             sc.close();
         }
-        System.out.println("hola");
     }
 }
