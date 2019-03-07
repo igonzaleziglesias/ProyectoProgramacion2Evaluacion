@@ -3,12 +3,11 @@ package codigo;
 import niveles.Avanzado;
 import niveles.Intermedio;
 import niveles.Principiante;
-import excepciones.ListaVacia;
-import static utilidades.Constantes.FIN;
+import ficheroPuntuaciones.Fichero;
 import javax.swing.JOptionPane;
 
 public class App {
-
+    public Fichero fich = new Fichero();
     public static int controlador;
 
     public App() {//menu iniciar partida o no
@@ -46,6 +45,8 @@ public class App {
                 switch (opcion) {
                     case 0:
                         Principiante principiante = new Principiante(ristra);   //nivel principiante           
+                        fich.añadirPuntuacion(ristra.getPuntuacion());
+                        fich.leerFichero();
                         break;
                     case 1:
                         Intermedio intermedio = new Intermedio(ristra); //nivel intermedio
