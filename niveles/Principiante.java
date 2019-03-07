@@ -34,12 +34,12 @@ public class Principiante {
 
             ristra.mostrarRistra();
 
-            if (ristra.tamaño() == FIN) {
-                JOptionPane.showMessageDialog(null, "HAS PERDIDO \nPuntuacion: " + ristra.getPuntuacion());
-                fich.añadirPuntuacion(ristra.getPuntuacion());
-                fich.leerFichero();
-                System.exit(0);
-            }
+//            if (ristra.tamaño() == FIN) {
+//                JOptionPane.showMessageDialog(null, "HAS PERDIDO \nPuntuacion: " + ristra.getPuntuacion());
+//                fich.añadirPuntuacion(ristra.getPuntuacion());
+//                fich.leerFichero();
+//                System.exit(0);
+//            }
             System.out.println("Bola a disparar: " + bola.toString());
 
             String[] elecciones = {"SI", "NO", "EXIT"};
@@ -69,8 +69,10 @@ public class Principiante {
         } while (ristra.tamaño() < FIN);//condicion termina el programa 
 
         ristra.mostrarRistra();
-        
+
         JOptionPane.showMessageDialog(null, "HAS PERDIDO 1\nPuntuacion: " + ristra.getPuntuacion());
+        fich.añadirPuntuacion(ristra.getPuntuacion());
+        fich.leerFichero();
         System.out.println("");
 
     }

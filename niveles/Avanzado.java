@@ -33,12 +33,12 @@ public class Avanzado {
 
             ristra.mostrarRistra();
 
-            if (ristra.tamaño() == FIN) {
-                JOptionPane.showMessageDialog(null, "HAS PERDIDO \nPuntuacion: " + ristra.getPuntuacion());
-                fich.añadirPuntuacion(ristra.getPuntuacion());
-                fich.leerFichero();
-                System.exit(0);
-            }
+//            if (ristra.tamaño() == FIN) {
+//                JOptionPane.showMessageDialog(null, "HAS PERDIDO \nPuntuacion: " + ristra.getPuntuacion());
+//                fich.añadirPuntuacion(ristra.getPuntuacion());
+//                fich.leerFichero();
+//                System.exit(0);
+//            }
             System.out.println("Bola a disparar: " + bola.toString());
 
             String[] elecciones = {"SI", "NO", "EXIT"};
@@ -70,7 +70,8 @@ public class Avanzado {
         ristra.mostrarRistra();
 
         JOptionPane.showMessageDialog(null, "HAS PERDIDO 3 \nPuntuacion: " + ristra.getPuntuacion());
-
+        fich.añadirPuntuacion(ristra.getPuntuacion());
+        fich.leerFichero();
         System.out.println("");
     }
 }
