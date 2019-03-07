@@ -5,11 +5,13 @@ import bolasDelJuego.Bola;
 import bolasDelJuego.BolaAvanzada;
 import codigo.GestionarRistra;
 import easterEgg.EasterEgg;
+import ficheroPuntuaciones.Fichero;
 import static utilidades.Constantes.FIN;
 import javax.swing.JOptionPane;
 
 public class Avanzado {
 
+    public Fichero fich = new Fichero();
     private BolaAvanzada bola = new BolaAvanzada();
     private BolaAvanzada bolaAvance;
 
@@ -56,6 +58,8 @@ public class Avanzado {
                     break;
                 case 2:
                     JOptionPane.showMessageDialog(null, "Has abandonado las partida\nPuntuacion: " + ristra.getPuntuacion());
+                    fich.añadirPuntuacion(ristra.getPuntuacion());
+                    fich.leerFichero();
                     System.exit(FIN);
                 default:
                     break;
