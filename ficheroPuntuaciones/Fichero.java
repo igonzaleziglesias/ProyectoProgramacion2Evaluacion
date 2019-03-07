@@ -35,6 +35,7 @@ public class Fichero {
     public void leerFichero() {
         try {
             sc = new Scanner(fich);
+            System.out.println("Tabla puntuaciones: ");
             while (sc.hasNext()) {
                 System.out.println(sc.nextLine());
             }
