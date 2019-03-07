@@ -5,18 +5,21 @@ import bolasDelJuego.Bola;
 import bolasDelJuego.BolaPrincipiante;
 import codigo.GestionarRistra;
 import easterEgg.EasterEgg;
+import ficheroPuntuaciones.Fichero;
 import static utilidades.Constantes.FIN;
 import javax.swing.JOptionPane;
 
 public class Principiante {
 
+    public Fichero fich = new Fichero();
     private BolaPrincipiante bola = new BolaPrincipiante();
     private BolaPrincipiante bolaAvance;
+
     public Principiante(GestionarRistra ristra) {
 
         do {
             System.out.print("Avanzando la ristra de bolas ");
-            ristra.avanzarRistra(bolaAvance=new BolaPrincipiante());
+            ristra.avanzarRistra(bolaAvance = new BolaPrincipiante());
 
             if ((ristra.tamaño() > 3) && (controlador == 0)) {
                 if (ristra.getPrimerElementoRistra().getColor().equals("R")
@@ -56,6 +59,8 @@ public class Principiante {
                     break;
                 case 2:
                     JOptionPane.showMessageDialog(null, "Has abandonado las partida\nPuntuacion: " + ristra.getPuntuacion());
+                    fich.añadirPuntuacion(ristra.getPuntuacion());
+                    fich.leerFichero();
                     System.exit(FIN);
                 default:
                     break;

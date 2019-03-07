@@ -28,7 +28,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "nick=" + nick + "puntuacion= " + puntuacion;
+        return "nick: " + nick + " puntuacion: " + puntuacion;
     }
 
 }
