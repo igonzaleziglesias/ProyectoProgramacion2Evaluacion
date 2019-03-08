@@ -61,7 +61,7 @@ public class Principiante {
                 case 2:
                     JOptionPane.showMessageDialog(null, "Has abandonado las partida\nPuntuacion: " + ristra.getPuntuacion());
                     fich.añadirPuntuacion(ristra.getPuntuacion());
-                    fich.leerFichero();
+//                    fich.leerFichero();
                     System.exit(FIN);
                 default:
                     break;
@@ -72,7 +72,7 @@ public class Principiante {
 
         JOptionPane.showMessageDialog(null, "HAS PERDIDO 1\nPuntuacion: " + ristra.getPuntuacion());
         fich.añadirPuntuacion(ristra.getPuntuacion());
-        fich.leerFichero();
+//        fich.leerFichero();
         System.out.println("");
 
     }
