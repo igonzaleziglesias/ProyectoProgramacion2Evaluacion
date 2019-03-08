@@ -51,7 +51,7 @@ public class Fichero {
 
     public String primerasCincoPuntuaciones() {//muestra las 5 mejores puntuaciones ordenadas por puntuacion y por antiguedad
         ArrayList<Usuario> lista = new ArrayList<Usuario>();
-        String devolver = "no hay puntuaciones";
+        String devolver = "No hay puntuaciones";
         try {
             sc = new Scanner(fich);
             while (sc.hasNextLine()) {//leer linea 
@@ -62,6 +62,8 @@ public class Fichero {
             Collections.sort(lista);
 
             switch (lista.size()) {//mostar numero de puntuaciones dependiendo del tamaño del array
+                case 0:
+                    return devolver;
                 case 1:
 
                     return "-" + lista.get(0).getNick() + " " + lista.get(0).getPuntuacion();
