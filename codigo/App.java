@@ -3,7 +3,6 @@ package codigo;
 import niveles.Avanzado;
 import niveles.Intermedio;
 import niveles.Principiante;
-import ficheroPuntuaciones.Fichero;
 import javax.swing.JOptionPane;
 
 public class App {

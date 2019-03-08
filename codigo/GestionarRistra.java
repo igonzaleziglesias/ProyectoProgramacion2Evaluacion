@@ -41,7 +41,7 @@ public class GestionarRistra {
     public void dispararBola(Bola bola) {//gestionamos Disparar una bola contra la ristara y capturamos las excepciones que puedan surgir
         try {//intenta disparar una bola contra la ristra y lanza la excepcion si no consigue alcanzarla
             ristraBolas.disparar(bola, 0);
-            System.out.println("Disparada");
+            System.out.println("\nDisparada");
         } catch (FueraDeRango ex) {
             System.out.println(ex.getMessage());
         } catch (ListaVacia ex) {

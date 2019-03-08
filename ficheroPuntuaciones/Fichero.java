@@ -35,20 +35,6 @@ public class Fichero {
         }
     }
 
-//    public void leerFichero() {
-//        try {
-//            sc = new Scanner(fich);
-//            System.out.println("puntuaciones:");
-//            while (sc.hasNext()) {
-//                System.out.println(sc.nextLine());
-//            }
-//        } catch (FileNotFoundException ex) {
-//            System.out.println("error2" + ex.getMessage());
-//        } finally {
-//            sc.close();
-//        }
-//    }
-
     public String primerasCincoPuntuaciones() {//muestra las 5 mejores puntuaciones ordenadas por puntuacion y por antiguedad
         ArrayList<Usuario> lista = new ArrayList<Usuario>();
         String devolver = "No hay puntuaciones";

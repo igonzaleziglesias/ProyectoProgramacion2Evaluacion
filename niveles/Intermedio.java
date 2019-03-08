@@ -16,7 +16,7 @@ public class Intermedio {
 
     public Intermedio(GestionarRistra ristra) {
         do {
-            System.out.print("Avanzando la ristra de bolas ");
+//            System.out.print("Avanzando la ristra de bolas ");
             ristra.avanzarRistra(bolaAvance = new BolaIntermedia());
 
             if ((ristra.tamaño() > 3) && (controlador == 0)) {

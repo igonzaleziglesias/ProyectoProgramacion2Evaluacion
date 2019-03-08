@@ -7,25 +7,24 @@ import java.util.ArrayList;
 
 public class MetodosAuxiliares {
 
-
     public int contarBolasPorDelante(int posicion, ArrayList<Bola> ristraBolas, int acumulador2) {//cuenta las bolas que hay despues del disparo iguales a la bola disparada(cuenta la bola disparada)
-        for (int i = posicion - 1; i >= 0; i--) { 
+        for (int i = posicion - 1; i >= 0; i--) {
             try {
                 if (ristraBolas.get(posicion).getColor().equals(ristraBolas.get(i).getColor())) {
-                    acumulador2++;                    
+                    acumulador2++;
                 } else {
                     break;
                 }
             } catch (Exception ex) {
                 //no hace nada, impide que el programa rompa si intenta acceder a una posicion inexistente
             }
-        }   System.out.println("der: " + (acumulador2 - 1)+" "+ristraBolas.get(posicion).getColor());
+        }
+//        System.out.println("der: " + (acumulador2 - 1) + " " + ristraBolas.get(posicion).getColor());
         return acumulador2;
     }
 
     public int contarBolasDetras(int posicion, ArrayList<Bola> ristraBolas, int acumulador, int longitud) {//cuenta las bolas que hay antes del disparo iguales a la bola disparada(cuenta la bola disparada)
         for (int i = posicion + 1; i <= longitud; i++) {
-//          System.out.println(ristraBolas.get(i));System.out.println(ristraBolas.get(posicion));
             try {
                 if (ristraBolas.get(posicion).getColor().equals(ristraBolas.get(i).getColor())) {
                     acumulador++;
@@ -35,8 +34,8 @@ public class MetodosAuxiliares {
             } catch (Exception ex) {
                 //no hace nada, impide que el programa rompa si intenta acceder a una posicion inexistente
             }
-        }                
-        System.out.println("izq: " + (acumulador - 1)+" "+ristraBolas.get(posicion).getColor());
+        }
+//        System.out.println("izq: " + (acumulador - 1) + " " + ristraBolas.get(posicion).getColor());
         return acumulador;
     }
 
@@ -52,7 +51,7 @@ public class MetodosAuxiliares {
                 numero = false;
             }
         } while (numero != true);
-                if (posicion < 0) {//comprueba que el disparo sea a la ristra de bolas y si no lanza una excepcion fuera de rango
+        if (posicion < 0) {//comprueba que el disparo sea a la ristra de bolas y si no lanza una excepcion fuera de rango
             throw new FueraDeRango("Disparo fallido");
         }
         if (posicion > longitud) {//comprueba que el disparo sea a la ristra de bolas y si no lanza una excepcion fuera de rango

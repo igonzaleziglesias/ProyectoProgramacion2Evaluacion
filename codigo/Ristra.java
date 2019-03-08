@@ -90,7 +90,7 @@ public class Ristra implements IRistra {
             System.out.print(ele.toString());
         }
         System.out.println("");
-        System.out.println("\nPuntuacion: " + puntuacion);
+        System.out.println("\nPuntuacion: " + puntuacion+"\n");
     }
 
     public void explotar(int posicion, int acumulador, int acumulador2) throws ListaVacia {//metodo para explotar si hay mas de 3 bolas juntas
@@ -155,22 +155,22 @@ public class Ristra implements IRistra {
                 acumulador2 = ayuda.contarBolasPorDelante(posicion, ristraBolas, acumulador2);//cuenta el numero de bolas iguales que hay delante de la posicion insertada(cuenta la bola insertada)
                 controlador = acumulador2;
                 bolasJuntas = acumulador2;
-                System.out.println("1.Bolas a explotar: " + bolasJuntas);
+//                System.out.println("1.Bolas a explotar: " + bolasJuntas);
                 if (bolasJuntas >= 3) {//hace explotar el conjunto de bolas si al disparar hay 3 o mas bolas iguales juntas
                     explotar(posicion, acumulador, acumulador2);
                     this.puntuacion = this.puntuacion + puntuacion(bolasJuntas);
-                    System.out.println("1.explotando");
+//                    System.out.println("1.explotando");
 //                this.puntuacion = this.puntuacion + puntuacion(bolasJuntas);
 
                     try {
                         control = 1;
                         Bola bolaComodin = ristraBolas.get(posicion - controlador);
                         ristraBolas.remove(posicion - controlador);
-                        System.out.println("1.Eliminando conjunto bolas");
+//                        System.out.println("1.Eliminando conjunto bolas");
                         disparar(bolaComodin, posicion - controlador);
 
                     } catch (Exception ex) {
-                        System.out.println("1.Siguiente Posicion nula");
+//                        System.out.println("1.Siguiente Posicion nula");
                     }
                 }
             } else {
@@ -185,30 +185,26 @@ public class Ristra implements IRistra {
 //                System.out.println("controlador: "+controlador);
 
                     bolasJuntas = (acumulador + acumulador2 - 1);
-                    System.out.println("2.Bolas a explotar: " + bolasJuntas);//restamos 1 para no contar dos veces la posicion del elemento introducido
+//                    System.out.println("2.Bolas a explotar: " + bolasJuntas);//restamos 1 para no contar dos veces la posicion del elemento introducido
 
                     if (bolasJuntas >= 3) {//hace explotar el conjunto de bolas si al disparar hay 3 o mas bolas iguales juntas
                         explotar(posicion, acumulador, acumulador2);
                         this.puntuacion = this.puntuacion + puntuacion(bolasJuntas);
-                        System.out.println("2.explotando");
+//                        System.out.println("2.explotando");
                         try {
                             control = 1;
                             Bola bolaComodin = ristraBolas.get(posicion - controlador);
                             ristraBolas.remove(posicion - controlador);
-                            System.out.println("2.Eliminando Elemento");
+//                            System.out.println("2.Eliminando Elemento");
                             disparar(bolaComodin, posicion - controlador);
                         } catch (Exception ex) {
-//                        System.out.println("puntos: "+puntos+" puntua: "+puntua);
-//                        if(puntua==0){this.puntuacion=this.puntuacion+puntos;
-//                        return ristraBolas;}
-//                        this.puntuacion=this.puntuacion+puntua;
-                            System.out.println("2.Siguiente Posicion nula");
+//                            System.out.println("2.Siguiente Posicion nula");
                         }
                     }
                 }
             }
         } else {
-            System.out.println("añadiendo de nuevo");
+//            System.out.println("añadiendo de nuevo");
             ristraBolas.add(posicion, bola);
 
             if (longitud() > 0) {//comprueba si la ristra tiene elementos
@@ -216,15 +212,15 @@ public class Ristra implements IRistra {
                 acumulador = ayuda.contarBolasDetras(posicion, ristraBolas, acumulador, longitud);//cuenta las bolas que hay despues del disparo iguales a la bola disparada(cuenta la bola disparada)
                 acumulador2 = ayuda.contarBolasPorDelante(posicion, ristraBolas, acumulador2);//cuenta las bolas que hay antes del disparo iguales a la bola disparada(cuenta la bola disparada)
                 controlador = acumulador2 - 1;
-                System.out.println("bola añadidada de nuevo en posicion: " + (posicion + 1) + " bolas por delante: " + controlador + " bolas por detras: " + (acumulador - 1));
+//                System.out.println("bola añadidada de nuevo en posicion: " + (posicion + 1) + " bolas por delante: " + controlador + " bolas por detras: " + (acumulador - 1));
                 bolasJuntas = (acumulador + acumulador2 - 1);
-                System.out.println("3.Bolas a explotar: " + bolasJuntas);//restamos 1 para no contar dos veces la posicion del elemento introducido
-                System.out.println("izq: " + (acumulador - 1) + " der: " + (acumulador2 - 1));
+//                System.out.println("3.Bolas a explotar: " + bolasJuntas);//restamos 1 para no contar dos veces la posicion del elemento introducido
+//                System.out.println("izq: " + (acumulador - 1) + " der: " + (acumulador2 - 1));
 
                 if ((bolasJuntas >= 3) && (acumulador - 1 >= 0) && (acumulador2 - 1 != 0)) {//hace explotar el conjunto de bolas si al disparar hay 3 o mas bolas iguales juntas
                     explotar(posicion, acumulador, acumulador2);
                     this.puntuacion = this.puntuacion + puntuacion(bolasJuntas) + puntuacionConcatenacion();
-                    System.out.println("3.explotando");
+//                    System.out.println("3.explotando");
 
                     Bola bolaComodin = ristraBolas.get(posicion - controlador);
                     ristraBolas.remove(posicion - controlador);

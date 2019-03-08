@@ -17,7 +17,7 @@ public class Principiante {
     public Principiante(GestionarRistra ristra) {
 
         do {
-            System.out.print("Avanzando la ristra de bolas ");
+//            System.out.print("Avanzando la ristra de bolas ");
             ristra.avanzarRistra(bolaAvance = new BolaPrincipiante());
 
             if ((ristra.tamaño() > 3) && (controlador == 0)) {
