@@ -15,14 +15,14 @@ public class Fichero {
     Scanner sc;
 
     public Fichero() {//creamos el fichero
-//        fich = new File("/home/local/DANIELCASTELAO/igonzaleziglesias/Escritorio/puntuaciones.txt");
-        fich = new File("C:\\Users\\Usuario\\Desktop\\puntuaciones.txt");
+        fich = new File("/home/local/DANIELCASTELAO/igonzaleziglesias/Escritorio/puntuaciones.txt");
+//        fich = new File("C:\\Users\\Usuario\\Desktop\\puntuaciones.txt");
     }
 
     public void añadirPuntuacion(int puntuacion) {//añadimos una puntuacion de un usuario
         try {
-//            f = new PrintWriter(new FileWriter("/home/local/DANIELCASTELAO/igonzaleziglesias/Escritorio/puntuaciones.txt", true));
-            f = new PrintWriter(new FileWriter("C:\\Users\\Usuario\\Desktop\\puntuaciones.txt", true));//abrimos canal
+            f = new PrintWriter(new FileWriter("/home/local/DANIELCASTELAO/igonzaleziglesias/Escritorio/puntuaciones.txt", true));
+//            f = new PrintWriter(new FileWriter("C:\\Users\\Usuario\\Desktop\\puntuaciones.txt", true));//abrimos canal
             Usuario jugador = new Usuario(Pedir.pedirString("Nick Name: "), puntuacion);//pedimos el nick y asignamos la puntuacion
             f.println(jugador);//escribimos en el fichero
         } catch (IOException ex) {
