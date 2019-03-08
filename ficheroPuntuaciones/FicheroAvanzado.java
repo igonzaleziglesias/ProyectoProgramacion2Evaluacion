@@ -11,20 +11,20 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 import utilidades.Pedir;
 
-public class Fichero {
+public class FicheroAvanzado {
 
     private File fich = null;
     private PrintWriter f = null;
     Scanner sc;
 
-    public Fichero() {
-        fich = new File("/home/local/DANIELCASTELAO/igonzaleziglesias/Escritorio/puntuaciones.txt");
+    public FicheroAvanzado() {
+        fich = new File("/home/local/DANIELCASTELAO/igonzaleziglesias/Escritorio/puntuacionAvanzada.txt");
 //        fich = new File("C:\\Users\\Usuario\\Desktop\\puntuaciones.txt");
     }
 
     public void añadirPuntuacion(int puntuacion) {
         try {
-            f = new PrintWriter(new FileWriter("/home/local/DANIELCASTELAO/igonzaleziglesias/Escritorio/puntuaciones.txt", true));
+            f = new PrintWriter(new FileWriter("/home/local/DANIELCASTELAO/igonzaleziglesias/Escritorio/puntuacionAvanzada.txt", true));
 //            f = new PrintWriter(new FileWriter("C:\\Users\\Usuario\\Desktop\\puntuaciones.txt", true));
             Usuario jugador = new Usuario(Pedir.pedirString("\nMejores 5 puntuaciones: \n"+primerasCincoPuntuaciones()+"\nNick: "), puntuacion);
             f.println(jugador);

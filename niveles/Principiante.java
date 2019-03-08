@@ -4,13 +4,13 @@ import static codigo.App.controlador;
 import bolasDelJuego.BolaPrincipiante;
 import codigo.GestionarRistra;
 import easterEgg.EasterEgg;
-import ficheroPuntuaciones.Fichero;
+import ficheroPuntuaciones.FicheroPrincipiante;
 import static utilidades.Constantes.FIN;
 import javax.swing.JOptionPane;
 
 public class Principiante {
 
-    public Fichero fich = new Fichero();
+    public FicheroPrincipiante fich = new FicheroPrincipiante();
     private BolaPrincipiante bola = new BolaPrincipiante();
     private BolaPrincipiante bolaAvance;
 
