@@ -31,7 +31,7 @@ public class EasterEgg {
                 + "____Z____________$$_____________________________________$$__________\n"
                 + "_________________$$_____________________________________$$__________\n");
 
-        ristra.setPuntuacion(ristra.getPuntuacion() + 1000);
+        ristra.setPuntuacion(ristra.getPuntuacion() + 100);
     }
 
 }
