@@ -19,7 +19,7 @@ public class Avanzado {
 //            System.out.print("Avanzando la ristra de bolas ");
             ristra.avanzarRistra(bolaAvance = new BolaAvanzada());
 
-            if ((ristra.tamaño() > 3) && (controlador == 0)) {
+            if ((ristra.tamaño() > 3) && (controlador == 0)) {//huevo de pascua
                 if (ristra.getPrimerElementoRistra().getColor().equals("R")
                         && ristra.getSegundoElementoRistra().getColor().equals("Z")
                         && ristra.getTercerElementoRistra().getColor().equals("V")
@@ -35,7 +35,7 @@ public class Avanzado {
 
             System.out.println("Bola a disparar: " + bola.toString());
 
-            String[] elecciones = {"SI", "NO", "EXIT"};
+            String[] elecciones = {"SI", "NO", "EXIT"};//menu disparar
             int eleccion = JOptionPane.showOptionDialog(
                     null,
                     "Desea disparar una bola??",
