@@ -34,12 +34,6 @@ public class Principiante {
 
             ristra.mostrarRistra();
 
-//            if (ristra.tamaño() == FIN) {
-//                JOptionPane.showMessageDialog(null, "HAS PERDIDO \nPuntuacion: " + ristra.getPuntuacion());
-//                fich.añadirPuntuacion(ristra.getPuntuacion());
-//                fich.leerFichero();
-//                System.exit(0);
-//            }
             System.out.println("Bola a disparar: " + bola.toString());
 
             String[] elecciones = {"SI", "NO", "EXIT"};

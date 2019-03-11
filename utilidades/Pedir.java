@@ -2,7 +2,7 @@ package utilidades;
 
 import javax.swing.JOptionPane;
 
-public class Pedir {
+public class Pedir {//Libreria
 
     public static int pedirInt(String msg) {
         return Integer.parseInt(JOptionPane.showInputDialog(msg));

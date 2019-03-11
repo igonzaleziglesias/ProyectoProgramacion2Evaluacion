@@ -8,7 +8,6 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
-import javax.swing.JOptionPane;
 import utilidades.Pedir;
 
 public class FicheroAvanzado {
